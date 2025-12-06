@@ -1,0 +1,66 @@
+# =============================================================================
+# Arquivos e pastas a ignorar no Git
+# =============================================================================
+
+# Pasta de backup (versoes antigas)
+Backup/
+
+# Material de referencia das aulas (nao faz parte da entrega)
+Aulas/
+
+# Arquivos temporarios do Windows
+nul
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Arquivos do sistema Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos de cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+
+# Ambientes virtuais
+venv/
+ENV/
+env/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Arquivos de log
+*.log
+
+# Arquivos temporarios
+*.tmp
+*.temp
+*.bak
+
+# Arquivos gerados pelo script de criacao do notebook
+create_gold_notebook.py
+
+# Databricks
+.databricks/
+
+# Arquivos de documento originais (versoes editaveis)
+*.docx
+*.rtf
+
+# Arquivos PDF de aulas (material de referencia)
+*.pdf
+

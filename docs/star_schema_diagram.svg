@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <defs>
+    <!-- Simple styles -->
+    <style>
+      .dim-box { fill: #2563eb; }
+      .fact-box { fill: #1e3a5f; }
+      .header-text { fill: white; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .field-text { fill: #1e293b; font-family: Arial, sans-serif; font-size: 12px; }
+      .type-text { fill: #64748b; font-family: Arial, sans-serif; font-size: 10px; }
+      .desc-text { fill: #94a3b8; font-family: Arial, sans-serif; font-size: 9px; font-style: italic; }
+      .line { stroke: #334155; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#1e293b">
+    Star schema
+  </text>
+
+  <!-- Connection Lines -->
+  <!-- Left dimension to fact -->
+  <path class="line" d="M 280 380 L 280 460 L 440 460" marker-end="url(#arrowhead)"/>
+
+  <!-- Top dimension to fact -->
+  <path class="line" d="M 700 280 L 700 400" marker-end="url(#arrowhead)"/>
+
+  <!-- Right dimension to fact -->
+  <path class="line" d="M 1120 380 L 1120 460 L 960 460" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#334155" />
+    </marker>
+  </defs>
+
+  <!-- LEFT DIMENSION: DIM_COUNTRIES -->
+  <g>
+    <!-- Header -->
+    <rect x="40" y="100" width="280" height="40" class="dim-box" rx="4"/>
+    <text x="180" y="125" class="header-text" text-anchor="middle">DIM_COUNTRIES</text>
+
+    <!-- Body -->
+    <rect x="40" y="140" width="280" height="330" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+
+    <!-- Fields with descriptions -->
+    <text x="60" y="165" class="field-text" font-weight="bold">country_id (PK)</text>
+    <text x="300" y="165" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="177" class="desc-text">Codigo ISO Alpha-3 (BRA, USA, CHN)</text>
+
+    <text x="60" y="200" class="field-text">country_code_2</text>
+    <text x="300" y="200" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="212" class="desc-text">Codigo ISO Alpha-2 (BR, US, CN)</text>
+
+    <text x="60" y="235" class="field-text">country_name_common</text>
+    <text x="300" y="235" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="247" class="desc-text">Nome comum em ingles</text>
+
+    <text x="60" y="270" class="field-text">country_name_official</text>
+    <text x="300" y="270" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="282" class="desc-text">Nome oficial completo</text>
+
+    <text x="60" y="305" class="field-text">capital</text>
+    <text x="300" y="305" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="317" class="desc-text">Cidade capital do pais</text>
+
+    <text x="60" y="340" class="field-text">region</text>
+    <text x="300" y="340" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="352" class="desc-text">Regiao geografica (5 valores)</text>
+
+    <text x="60" y="375" class="field-text">subregion</text>
+    <text x="300" y="375" class="type-text" text-anchor="end">STRING</text>
+    <text x="60" y="387" class="desc-text">Sub-regiao especifica (24 valores)</text>
+
+    <text x="60" y="410" class="field-text">landlocked</text>
+    <text x="300" y="410" class="type-text" text-anchor="end">BOOLEAN</text>
+    <text x="60" y="422" class="desc-text">Pais sem acesso ao mar</text>
+
+    <text x="60" y="445" class="field-text">latitude</text>
+    <text x="300" y="445" class="type-text" text-anchor="end">DOUBLE</text>
+    <text x="60" y="457" class="desc-text">Coordenada geografica [-90, 90]</text>
+  </g>
+
+  <!-- TOP DIMENSION: DIM_CURRENCIES -->
+  <g>
+    <!-- Header -->
+    <rect x="550" y="80" width="300" height="40" class="dim-box" rx="4"/>
+    <text x="700" y="105" class="header-text" text-anchor="middle">DIM_CURRENCIES</text>
+
+    <!-- Body -->
+    <rect x="550" y="120" width="300" height="160" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+
+    <!-- Fields with descriptions -->
+    <text x="570" y="145" class="field-text" font-weight="bold">currency_code (PK)</text>
+    <text x="830" y="145" class="type-text" text-anchor="end">STRING</text>
+    <text x="570" y="157" class="desc-text">Codigo ISO 4217 (USD, EUR, BRL)</text>
+
+    <text x="570" y="180" class="field-text">currency_name</text>
+    <text x="830" y="180" class="type-text" text-anchor="end">STRING</text>
+    <text x="570" y="192" class="desc-text">Nome completo da moeda</text>
+
+    <text x="570" y="215" class="field-text">currency_symbol</text>
+    <text x="830" y="215" class="type-text" text-anchor="end">STRING</text>
+    <text x="570" y="227" class="desc-text">Simbolo da moeda ($, €, R$)</text>
+
+    <!-- Footer info -->
+    <text x="700" y="260" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b" font-style="italic">
+      146 rows
+    </text>
+  </g>
+
+  <!-- RIGHT DIMENSION: DIM_LANGUAGES -->
+  <g>
+    <!-- Header -->
+    <rect x="1080" y="100" width="280" height="40" class="dim-box" rx="4"/>
+    <text x="1220" y="125" class="header-text" text-anchor="middle">DIM_LANGUAGES</text>
+
+    <!-- Body -->
+    <rect x="1080" y="140" width="280" height="160" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+
+    <!-- Fields with descriptions -->
+    <text x="1100" y="165" class="field-text" font-weight="bold">language_code (PK)</text>
+    <text x="1340" y="165" class="type-text" text-anchor="end">STRING</text>
+    <text x="1100" y="177" class="desc-text">Codigo ISO 639 (eng, spa, por)</text>
+
+    <text x="1100" y="200" class="field-text">language_name</text>
+    <text x="1340" y="200" class="type-text" text-anchor="end">STRING</text>
+    <text x="1100" y="212" class="desc-text">Nome do idioma em ingles</text>
+
+    <text x="1100" y="235" class="field-text">countries_count</text>
+    <text x="1340" y="235" class="type-text" text-anchor="end">INT</text>
+    <text x="1100" y="247" class="desc-text">Numero de paises que falam</text>
+
+    <!-- Footer info -->
+    <text x="1220" y="280" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b" font-style="italic">
+      140 rows
+    </text>
+  </g>
+
+  <!-- CENTER FACT TABLE -->
+  <g>
+    <!-- Header -->
+    <rect x="440" y="400" width="520" height="45" class="fact-box" rx="4"/>
+    <text x="700" y="428" class="header-text" text-anchor="middle" font-size="16">FACT_COUNTRY_METRICS</text>
+
+    <!-- Body -->
+    <rect x="440" y="445" width="520" height="280" fill="white" stroke="#cbd5e1" stroke-width="2" rx="4"/>
+
+    <!-- Fields with descriptions -->
+    <text x="460" y="475" class="field-text" font-weight="bold">country_id (FK)</text>
+    <text x="940" y="475" class="type-text" text-anchor="end">STRING</text>
+    <text x="460" y="487" class="desc-text">Chave estrangeira para dim_countries</text>
+
+    <text x="460" y="515" class="field-text">population</text>
+    <text x="940" y="515" class="type-text" text-anchor="end">LONG</text>
+    <text x="460" y="527" class="desc-text">Populacao total do pais (882 - 1.417M)</text>
+
+    <text x="460" y="555" class="field-text">area_km2</text>
+    <text x="940" y="555" class="type-text" text-anchor="end">DOUBLE</text>
+    <text x="460" y="567" class="desc-text">Area territorial em km2 (0.49 - 17.1M)</text>
+
+    <text x="460" y="595" class="field-text">population_density</text>
+    <text x="940" y="595" class="type-text" text-anchor="end">DOUBLE</text>
+    <text x="460" y="607" class="desc-text">Densidade hab/km2 (2.27 - 19,021)</text>
+
+    <text x="460" y="635" class="field-text">snapshot_date</text>
+    <text x="940" y="635" class="type-text" text-anchor="end">DATE</text>
+    <text x="460" y="647" class="desc-text">Data do snapshot dos dados</text>
+
+    <!-- Footer info -->
+    <text x="700" y="695" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#64748b" font-style="italic">
+      195 rows (1 execucao unica apos deduplicacao)
+    </text>
+  </g>
+
+</svg>
