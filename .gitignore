@@ -1,66 +1,40 @@
 # =============================================================================
-# Arquivos e pastas a ignorar no Git
+# Arquivos e pastas ignorados pelo Git
+# MVP - Engenharia de Dados | PUC-Rio
 # =============================================================================
 
-# Pasta de backup (versoes antigas)
+# Pastas locais (nao fazem parte da entrega)
 Backup/
-
-# Material de referencia das aulas (nao faz parte da entrega)
 Aulas/
 
-# Arquivos temporarios do Windows
-nul
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Arquivos do sistema Mac
+# Arquivos de sistema
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Arquivos de cache Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-*.egg
-*.egg-info/
-
-# Ambientes virtuais
-venv/
-ENV/
-env/
+Thumbs.db
+Desktop.ini
 
 # IDEs e editores
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
+.cursor/
+.claude/
 
-# Jupyter checkpoints
+# Python
+__pycache__/
+*.py[cod]
 .ipynb_checkpoints/
-
-# Arquivos de log
-*.log
-
-# Arquivos temporarios
-*.tmp
-*.temp
-*.bak
-
-# Arquivos gerados pelo script de criacao do notebook
-create_gold_notebook.py
 
 # Databricks
 .databricks/
 
-# Arquivos de documento originais (versoes editaveis)
+# Arquivos temporarios
+*.log
+*.tmp
+*.bak
+
+# Documentos originais
 *.docx
 *.rtf
-
-# Arquivos PDF de aulas (material de referencia)
 *.pdf
 
+# Videos grandes (hospedados externamente)
+*.mp4

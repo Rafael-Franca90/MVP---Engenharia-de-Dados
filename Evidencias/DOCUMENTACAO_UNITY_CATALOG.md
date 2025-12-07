@@ -188,7 +188,7 @@ ORDER BY country_name_common;
 **Qualidade de Dados**:
 - Validação: currency_code não pode ser nulo
 - Deduplicação: Por currency_code
-- Registros esperados: ~150-180
+- Registros esperados: 146
 
 **Exemplo de Uso**:
 ```sql
@@ -222,7 +222,7 @@ ORDER BY currency_code;
 **Qualidade de Dados**:
 - Validação: language_code não pode ser nulo
 - Deduplicação: Por language_code
-- Registros esperados: ~100-150
+- Registros esperados: 141
 
 **Exemplo de Uso**:
 ```sql
@@ -405,15 +405,16 @@ LIMIT 15;
 | metric_value | DOUBLE | NOT NULL | Valor da métrica |
 | calculation_date | DATE | NOT NULL | Data do cálculo |
 
-**Métricas Disponíveis**:
-- `total_countries`: Total de países no dataset
-- `world_population`: População mundial total
-- `world_land_area_km2`: Área terrestre total
-- `avg_population_density`: Densidade populacional média global
-- `landlocked_countries`: Total de países sem costa
-- `total_regions`: Número de regiões geográficas
-- `largest_country_area_km2`: Maior país por área
-- `largest_country_population`: Maior país por população
+**Métricas Disponíveis** (9 métricas):
+- `total_countries`: Total de países no dataset (195)
+- `world_population`: População mundial total (~7,97B)
+- `world_land_area_km2`: Área terrestre total (~133M km²)
+- `avg_country_density`: Densidade média por país (311.54 hab/km²)
+- `world_population_density`: Densidade global real (59.70 hab/km²)
+- `landlocked_countries`: Total de países sem costa (45)
+- `total_regions`: Número de regiões geográficas (5)
+- `largest_country_area_km2`: Maior país por área (Rússia - 17.098.246 km²)
+- `largest_country_population`: Maior país por população (Índia - 1.417.492.000)
 
 **Casos de Uso**:
 - Dashboards executivos
